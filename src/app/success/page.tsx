@@ -16,7 +16,7 @@ const SuccessPage = () => {
     if (payment_intent) {
       const makeRequest = async () => {
         try {
-          const response = await fetch(`/api/confirm/${payment_intent}`, {
+          const response = await fetch(`https://chromolitebite.netlify.app/api/confirm/${payment_intent}`, {
             method: "PUT",
           });
 
