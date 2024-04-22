@@ -7,7 +7,7 @@ export const PUT = async (
   req: NextRequest,
   { params }: { params: { id: string } }
 ) => {
-  const { id } = params;
+  const {id} = params;
 
   try {
     const body = await req.json();
@@ -16,17 +16,19 @@ export const PUT = async (
       where: {
         id: id,
       },
-      data: { status: body },
+      data: {status: body},
     });
     return new NextResponse(
-      JSON.stringify({ message: "Order has been updated!" }),
-      { status: 200 }
+        JSON.stringify({message: "Order has been updated!"}),
+        {status: 200}
     );
   } catch (err) {
     console.log(err);
     return new NextResponse(
-      JSON.stringify({ message: "Something went wrong!" }),
-      { status: 500 }
+        JSON.stringify({message: "Something went wrong!"}),
+        {status: 500}
     );
+  }
+}
 
 
